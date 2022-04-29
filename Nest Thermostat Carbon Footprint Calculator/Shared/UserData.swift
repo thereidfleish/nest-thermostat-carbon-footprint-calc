@@ -17,31 +17,11 @@ struct UserData {
     
     var profilePic: URL?
     
-    // Student data
-    var bucketContents: UploadsRes
+    var electricityRate = Double
     
-    var buckets: [Bucket]
+    var cooling: Cooling
     
-    var comments: [Comment]
-    
-    var courtships: [Courtship]
-    
-    var courtshipRequests: [Courtship]
-    
-//    var incomingFriendRequests: [Friend]
-//    var outgoingFriendRequests: [Friend]
-    
-    //var bucketContents: [BucketContents]
-    
-    //var bucketContents: BucketContents
-    
-    //    enum FeedbackStatus {
-    //        case awaiting
-    //        case read
-    //        case unread
-    //    }
-    //
-    //    var feedbacks: [FeedbackStatus] = [.awaiting, .unread, .read]
+    var heating: Heating
     
     
     static func computeWelcome() -> String {
@@ -94,132 +74,26 @@ struct SharedData: Codable, Identifiable {
     //var type: Int // -1 == user not logged in, 0 == student, 1 == coach
 }
 
-struct Upload: Codable, Identifiable {
-    var id: Int
-    var created: Date
-    var display_title: String
-    var stream_ready: Bool
-    var bucket: Bucket?
-    var url: String?
-    var thumbnail: String?
+enum CoolingType {
+    case onlyFan
+    case fanAndCompressor
 }
 
-struct BucketRes: Codable {
-    var buckets: [Bucket]
+struct Cooling {
+    var type: CoolingType
+    var fanWattage: Double
+    var compressorWattage: Double?
 }
 
-struct Bucket: Codable, Identifiable {
-    var id: Int
-    var name: String
-    //var user_id: Int
-    var last_modified: Date?
+enum HeatingType {
+    case oilBurner
+    case gasBurner
+    case electricResistance
 }
 
-struct UploadsRes: Codable {
-    var uploads: [Upload]
-}
-
-//struct BucketContents: Codable {
-//    var id: Int
-//    var name: String
-//    var user_id: Int
-//    var last_modified: Date?
-//    var uploads: [Upload]
-//}
-
-struct Comment: Codable, Identifiable {
-    var id: Int
-    var created: Date
-    var author: SharedData
-    var text: String
-    var upload_id: Int
-}
-
-struct Tag: Codable {
-    var tagID: Int
-    var name: String
-}
-
-// Helpers
-struct AuthReq: Codable {
-    var token: String
-}
-
-struct UpdateUserReq: Codable {
-    var username: String
-    var display_name: String
-}
-
-struct VideoReq: Codable {
-    var filename: String
-    var display_title: String
-    var bucket_id: Int
-}
-
-struct VideoRes: Codable {
-    var id: Int
-    var url: String
-    var fields: Field
-}
-
-struct Field: Codable {
-    var key: String
-    var x_amz_algorithm: String
-    var x_amz_credential: String
-    var x_amz_date: String
-    var policy: String
-    var x_amz_signature: String
-}
-
-struct CreateCommentReq: Codable {
-    var upload_id: String
-    var text: String
-}
-
-struct CommentsRes: Codable {
-    var comments: [Comment]
-}
-
-struct BucketReq: Codable {
-    var name: String
-}
-
-struct DeleteUploadRes: Codable {
-    var message: String
-}
-
-struct SearchRes: Codable {
-    var users: [SharedData]
-}
-
-struct FriendReq: Codable {
-    var courtships: [Courtship]
-}
-
-struct CourtshipRequestReq: Codable {
-    var user_id: Int
-    var type: String
-}
-
-struct CourtshipRequestRes: Codable {
-    var requests: [Courtship]
-}
-
-struct GetCourtshipsRes: Codable {
-    var courtships: [Courtship]
-}
-
-struct Courtship: Codable, Identifiable {
-    var id: Int?
-    var type: String
-    var dir: String?
-    var user: SharedData
-}
-
-struct UpdateIncomingCourtshipRequestReq: Codable {
-    var status: String
-}
-
-struct EditUploadReq: Codable {
-    var display_title: String
+struct Heating {
+    var type: HeatingType
+    var oilGPH: Double?
+    var gasUnitsPH: Double?
+    var otherElectricalWattage: Double?
 }
