@@ -17,7 +17,7 @@ struct UserData {
     
     var profilePic: URL?
     
-    var electricityRate = Double
+    var electricityRate: Double
     
     var cooling: Cooling
     
@@ -75,17 +75,21 @@ struct SharedData: Codable, Identifiable {
 }
 
 enum CoolingType {
+    case unknown
+    case none
     case onlyFan
     case fanAndCompressor
 }
 
 struct Cooling {
     var type: CoolingType
-    var fanWattage: Double
+    var fanWattage: Double?
     var compressorWattage: Double?
 }
 
 enum HeatingType {
+    case unknown
+    case none
     case oilBurner
     case gasBurner
     case electricResistance

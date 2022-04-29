@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct Home: View {
+    @EnvironmentObject private var nc: NetworkController
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text("\(UserData.computeWelcome()) \(UserData.firstName(name: nc.userData.shared.display_name))!")
     }
 }
 

@@ -7,13 +7,25 @@
 
 import SwiftUI
 
-/* General button style */
-struct button: ViewModifier {
+/* Blue button style */
+struct buttonBlue: ViewModifier {
     func body(content: Content) -> some View {
         content
             .padding(.vertical, 15)
             .frame(maxWidth: .infinity)
-            .background(Color.green)
+            .background(Color.blue)
+            .cornerRadius(10)
+            .foregroundColor(.white)
+    }
+}
+
+/* Red button style */
+struct buttonRed: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .padding(.vertical, 15)
+            .frame(maxWidth: .infinity)
+            .background(Color.red)
             .cornerRadius(10)
             .foregroundColor(.white)
     }
@@ -132,8 +144,11 @@ struct friendStatusBackground: ViewModifier {
 }
 
 extension View {
-    func buttonStyle() -> some View {
-        modifier(button())
+    func buttonBlueStyle() -> some View {
+        modifier(buttonBlue())
+    }
+    func buttonRedStyle() -> some View {
+        modifier(buttonRed())
     }
     func textFieldStyle() -> some View {
         modifier(textField())

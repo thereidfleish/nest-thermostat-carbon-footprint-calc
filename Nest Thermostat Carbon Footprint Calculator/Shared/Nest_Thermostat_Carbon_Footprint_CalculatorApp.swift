@@ -17,10 +17,10 @@ struct Nest_Thermostat_Carbon_Footprint_CalculatorApp: App {
                 LogInView()
                     .environmentObject(networkController)
             }
-//            else if (networkController.newUser) {
-//                ProfileSettingsView(isNewUser: true)
-//                    .environmentObject(networkController)
-//            }
+            else if (networkController.newUser) {
+                Setup()
+                    .environmentObject(networkController)
+            }
             else {
                 ContentView()
                     .environmentObject(networkController)

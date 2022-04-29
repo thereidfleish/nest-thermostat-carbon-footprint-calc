@@ -149,6 +149,8 @@ struct LogInView: View {
             if let uIdToken = idToken {
                 //self.tokenSignIn(idToken: uIdToken)
                 print("hi angelica")
+                nc.userData.loggedIn = true
+                nc.newUser = true
             } else {
                 print("Authentication Failed")
             }
