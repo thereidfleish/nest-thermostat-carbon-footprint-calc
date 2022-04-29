@@ -1,0 +1,5 @@
+#import <Foundation/Foundation.h>
+@interface PodsDummy_Pods_Nest_Thermostat_Carbon_Footprint_Calculator__macOS_ : NSObject
+@end
+@implementation PodsDummy_Pods_Nest_Thermostat_Carbon_Footprint_Calculator__macOS_
+@end

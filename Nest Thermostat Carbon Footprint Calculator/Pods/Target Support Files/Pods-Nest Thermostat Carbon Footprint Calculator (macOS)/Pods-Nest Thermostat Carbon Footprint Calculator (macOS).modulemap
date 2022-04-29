@@ -1,0 +1,6 @@
+framework module Pods_Nest_Thermostat_Carbon_Footprint_Calculator__macOS_ {
+  umbrella header "Pods-Nest Thermostat Carbon Footprint Calculator (macOS)-umbrella.h"
+
+  export *
+  module * { export * }
+}

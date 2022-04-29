@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		25BD094B281B29F600F4ABF6 /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 25BD094A281B29F600F4ABF6 /* credentials.plist */; };
+		25BD094D281B2B6F00F4ABF6 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25BD094C281B2B6E00F4ABF6 /* UserData.swift */; };
+		25BD0950281B3BB800F4ABF6 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25BD094F281B3BB800F4ABF6 /* Home.swift */; };
+		25BD0951281B3BB800F4ABF6 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25BD094F281B3BB800F4ABF6 /* Home.swift */; };
+		25BD0953281B410500F4ABF6 /* Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25BD0952281B410400F4ABF6 /* Setup.swift */; };
+		25BD0954281B410500F4ABF6 /* Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25BD0952281B410400F4ABF6 /* Setup.swift */; };
+		25BD0956281B44EB00F4ABF6 /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25BD0955281B44EB00F4ABF6 /* Styles.swift */; };
+		25BD0957281B44EB00F4ABF6 /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25BD0955281B44EB00F4ABF6 /* Styles.swift */; };
 		25BE9D4527EE68AC004F6453 /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25BE9D4427EE68AC004F6453 /* Tests_iOS.swift */; };
 		25BE9D4727EE68AC004F6453 /* Tests_iOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25BE9D4627EE68AC004F6453 /* Tests_iOSLaunchTests.swift */; };
 		25BE9D5127EE68AC004F6453 /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25BE9D5027EE68AC004F6453 /* Tests_macOS.swift */; };
@@ -17,6 +25,12 @@
 		25BE9D5727EE68AC004F6453 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25BE9D2D27EE68A9004F6453 /* ContentView.swift */; };
 		25BE9D5827EE68AC004F6453 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25BE9D2E27EE68AC004F6453 /* Assets.xcassets */; };
 		25BE9D5927EE68AC004F6453 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25BE9D2E27EE68AC004F6453 /* Assets.xcassets */; };
+		25CB6C0D281B274F00E5902D /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CB6C0B281B274F00E5902D /* LogInView.swift */; };
+		25CB6C0E281B274F00E5902D /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CB6C0B281B274F00E5902D /* LogInView.swift */; };
+		25CB6C0F281B274F00E5902D /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CB6C0C281B274F00E5902D /* NetworkController.swift */; };
+		25CB6C10281B274F00E5902D /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CB6C0C281B274F00E5902D /* NetworkController.swift */; };
+		53045246357FAD425428F2D8 /* Pods_Nest_Thermostat_Carbon_Footprint_Calculator__macOS_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37A2144DCC48ABC21EE1F953 /* Pods_Nest_Thermostat_Carbon_Footprint_Calculator__macOS_.framework */; };
+		F19095A9923DF23CE383B59F /* Pods_Nest_Thermostat_Carbon_Footprint_Calculator__iOS_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED161F24448C2EC5B8D250FF /* Pods_Nest_Thermostat_Carbon_Footprint_Calculator__iOS_.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +51,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		25BD094A281B29F600F4ABF6 /* credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = credentials.plist; sourceTree = "<group>"; };
+		25BD094C281B2B6E00F4ABF6 /* UserData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		25BD094E281B2D3100F4ABF6 /* Nest-Thermostat-Carbon-Footprint-Calculator--iOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Nest-Thermostat-Carbon-Footprint-Calculator--iOS--Info.plist"; sourceTree = "<group>"; };
+		25BD094F281B3BB800F4ABF6 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		25BD0952281B410400F4ABF6 /* Setup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setup.swift; sourceTree = "<group>"; };
+		25BD0955281B44EB00F4ABF6 /* Styles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
 		25BE9D2C27EE68A9004F6453 /* Nest_Thermostat_Carbon_Footprint_CalculatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nest_Thermostat_Carbon_Footprint_CalculatorApp.swift; sourceTree = "<group>"; };
 		25BE9D2D27EE68A9004F6453 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		25BE9D2E27EE68AC004F6453 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +69,14 @@
 		25BE9D4C27EE68AC004F6453 /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		25BE9D5027EE68AC004F6453 /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		25BE9D5227EE68AC004F6453 /* Tests_macOSLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOSLaunchTests.swift; sourceTree = "<group>"; };
+		25CB6C0B281B274F00E5902D /* LogInView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
+		25CB6C0C281B274F00E5902D /* NetworkController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
+		37A2144DCC48ABC21EE1F953 /* Pods_Nest_Thermostat_Carbon_Footprint_Calculator__macOS_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nest_Thermostat_Carbon_Footprint_Calculator__macOS_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		854B5FDDCFF11252258F780A /* Pods-Nest Thermostat Carbon Footprint Calculator (iOS).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nest Thermostat Carbon Footprint Calculator (iOS).debug.xcconfig"; path = "Target Support Files/Pods-Nest Thermostat Carbon Footprint Calculator (iOS)/Pods-Nest Thermostat Carbon Footprint Calculator (iOS).debug.xcconfig"; sourceTree = "<group>"; };
+		9D076594FD4030CD48730354 /* Pods-Nest Thermostat Carbon Footprint Calculator (macOS).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nest Thermostat Carbon Footprint Calculator (macOS).release.xcconfig"; path = "Target Support Files/Pods-Nest Thermostat Carbon Footprint Calculator (macOS)/Pods-Nest Thermostat Carbon Footprint Calculator (macOS).release.xcconfig"; sourceTree = "<group>"; };
+		BE8C21D22ADBB17FE052B5D8 /* Pods-Nest Thermostat Carbon Footprint Calculator (iOS).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nest Thermostat Carbon Footprint Calculator (iOS).release.xcconfig"; path = "Target Support Files/Pods-Nest Thermostat Carbon Footprint Calculator (iOS)/Pods-Nest Thermostat Carbon Footprint Calculator (iOS).release.xcconfig"; sourceTree = "<group>"; };
+		ECCDE990D4DEA6810D492EEB /* Pods-Nest Thermostat Carbon Footprint Calculator (macOS).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nest Thermostat Carbon Footprint Calculator (macOS).debug.xcconfig"; path = "Target Support Files/Pods-Nest Thermostat Carbon Footprint Calculator (macOS)/Pods-Nest Thermostat Carbon Footprint Calculator (macOS).debug.xcconfig"; sourceTree = "<group>"; };
+		ED161F24448C2EC5B8D250FF /* Pods_Nest_Thermostat_Carbon_Footprint_Calculator__iOS_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nest_Thermostat_Carbon_Footprint_Calculator__iOS_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F19095A9923DF23CE383B59F /* Pods_Nest_Thermostat_Carbon_Footprint_Calculator__iOS_.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53045246357FAD425428F2D8 /* Pods_Nest_Thermostat_Carbon_Footprint_Calculator__macOS_.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,14 +113,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D09789445203148CC1D1309 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ED161F24448C2EC5B8D250FF /* Pods_Nest_Thermostat_Carbon_Footprint_Calculator__iOS_.framework */,
+				37A2144DCC48ABC21EE1F953 /* Pods_Nest_Thermostat_Carbon_Footprint_Calculator__macOS_.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		25BE9D2627EE68A9004F6453 = {
 			isa = PBXGroup;
 			children = (
+				25BD094E281B2D3100F4ABF6 /* Nest-Thermostat-Carbon-Footprint-Calculator--iOS--Info.plist */,
+				25BD094A281B29F600F4ABF6 /* credentials.plist */,
 				25BE9D2B27EE68A9004F6453 /* Shared */,
 				25BE9D3A27EE68AC004F6453 /* macOS */,
 				25BE9D4327EE68AC004F6453 /* Tests iOS */,
 				25BE9D4F27EE68AC004F6453 /* Tests macOS */,
 				25BE9D3427EE68AC004F6453 /* Products */,
+				78A6CEDF2738A81CDE46380B /* Pods */,
+				1D09789445203148CC1D1309 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,6 +142,12 @@
 			children = (
 				25BE9D2C27EE68A9004F6453 /* Nest_Thermostat_Carbon_Footprint_CalculatorApp.swift */,
 				25BE9D2D27EE68A9004F6453 /* ContentView.swift */,
+				25BD094F281B3BB800F4ABF6 /* Home.swift */,
+				25BD0952281B410400F4ABF6 /* Setup.swift */,
+				25CB6C0B281B274F00E5902D /* LogInView.swift */,
+				25CB6C0C281B274F00E5902D /* NetworkController.swift */,
+				25BD094C281B2B6E00F4ABF6 /* UserData.swift */,
+				25BD0955281B44EB00F4ABF6 /* Styles.swift */,
 				25BE9D2E27EE68AC004F6453 /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -141,6 +190,17 @@
 			path = "Tests macOS";
 			sourceTree = "<group>";
 		};
+		78A6CEDF2738A81CDE46380B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				854B5FDDCFF11252258F780A /* Pods-Nest Thermostat Carbon Footprint Calculator (iOS).debug.xcconfig */,
+				BE8C21D22ADBB17FE052B5D8 /* Pods-Nest Thermostat Carbon Footprint Calculator (iOS).release.xcconfig */,
+				ECCDE990D4DEA6810D492EEB /* Pods-Nest Thermostat Carbon Footprint Calculator (macOS).debug.xcconfig */,
+				9D076594FD4030CD48730354 /* Pods-Nest Thermostat Carbon Footprint Calculator (macOS).release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -148,9 +208,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 25BE9D5C27EE68AC004F6453 /* Build configuration list for PBXNativeTarget "Nest Thermostat Carbon Footprint Calculator (iOS)" */;
 			buildPhases = (
+				E6DB8613412565FC203750A5 /* [CP] Check Pods Manifest.lock */,
 				25BE9D2F27EE68AC004F6453 /* Sources */,
 				25BE9D3027EE68AC004F6453 /* Frameworks */,
 				25BE9D3127EE68AC004F6453 /* Resources */,
+				DDD35A33720790D0D9108B0F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -165,6 +227,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 25BE9D5F27EE68AC004F6453 /* Build configuration list for PBXNativeTarget "Nest Thermostat Carbon Footprint Calculator (macOS)" */;
 			buildPhases = (
+				FC41507FAF5C1F855478C0B9 /* [CP] Check Pods Manifest.lock */,
 				25BE9D3527EE68AC004F6453 /* Sources */,
 				25BE9D3627EE68AC004F6453 /* Frameworks */,
 				25BE9D3727EE68AC004F6453 /* Resources */,
@@ -267,6 +330,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				25BE9D5827EE68AC004F6453 /* Assets.xcassets in Resources */,
+				25BD094B281B29F600F4ABF6 /* credentials.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,12 +358,82 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		DDD35A33720790D0D9108B0F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Nest Thermostat Carbon Footprint Calculator (iOS)/Pods-Nest Thermostat Carbon Footprint Calculator (iOS)-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Nest Thermostat Carbon Footprint Calculator (iOS)/Pods-Nest Thermostat Carbon Footprint Calculator (iOS)-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Nest Thermostat Carbon Footprint Calculator (iOS)/Pods-Nest Thermostat Carbon Footprint Calculator (iOS)-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E6DB8613412565FC203750A5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Nest Thermostat Carbon Footprint Calculator (iOS)-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FC41507FAF5C1F855478C0B9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Nest Thermostat Carbon Footprint Calculator (macOS)-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		25BE9D2F27EE68AC004F6453 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25CB6C0F281B274F00E5902D /* NetworkController.swift in Sources */,
+				25CB6C0D281B274F00E5902D /* LogInView.swift in Sources */,
 				25BE9D5627EE68AC004F6453 /* ContentView.swift in Sources */,
+				25BD0956281B44EB00F4ABF6 /* Styles.swift in Sources */,
+				25BD094D281B2B6F00F4ABF6 /* UserData.swift in Sources */,
+				25BD0950281B3BB800F4ABF6 /* Home.swift in Sources */,
+				25BD0953281B410500F4ABF6 /* Setup.swift in Sources */,
 				25BE9D5427EE68AC004F6453 /* Nest_Thermostat_Carbon_Footprint_CalculatorApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -308,6 +442,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25CB6C10281B274F00E5902D /* NetworkController.swift in Sources */,
+				25BD0957281B44EB00F4ABF6 /* Styles.swift in Sources */,
+				25BD0954281B410500F4ABF6 /* Setup.swift in Sources */,
+				25CB6C0E281B274F00E5902D /* LogInView.swift in Sources */,
+				25BD0951281B3BB800F4ABF6 /* Home.swift in Sources */,
 				25BE9D5727EE68AC004F6453 /* ContentView.swift in Sources */,
 				25BE9D5527EE68AC004F6453 /* Nest_Thermostat_Carbon_Footprint_CalculatorApp.swift in Sources */,
 			);
@@ -458,6 +597,7 @@
 		};
 		25BE9D5D27EE68AC004F6453 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 854B5FDDCFF11252258F780A /* Pods-Nest Thermostat Carbon Footprint Calculator (iOS).debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -466,6 +606,7 @@
 				DEVELOPMENT_TEAM = FF95FHPLK4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Nest-Thermostat-Carbon-Footprint-Calculator--iOS--Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -488,6 +629,7 @@
 		};
 		25BE9D5E27EE68AC004F6453 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE8C21D22ADBB17FE052B5D8 /* Pods-Nest Thermostat Carbon Footprint Calculator (iOS).release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -496,6 +638,7 @@
 				DEVELOPMENT_TEAM = FF95FHPLK4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Nest-Thermostat-Carbon-Footprint-Calculator--iOS--Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -519,6 +662,7 @@
 		};
 		25BE9D6027EE68AC004F6453 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ECCDE990D4DEA6810D492EEB /* Pods-Nest Thermostat Carbon Footprint Calculator (macOS).debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -547,6 +691,7 @@
 		};
 		25BE9D6127EE68AC004F6453 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9D076594FD4030CD48730354 /* Pods-Nest Thermostat Carbon Footprint Calculator (macOS).release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
