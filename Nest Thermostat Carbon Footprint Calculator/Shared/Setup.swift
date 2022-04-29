@@ -9,7 +9,7 @@ import SwiftUI
 
 struct Setup: View {
     @EnvironmentObject private var nc: NetworkController
-    @State private var electricityCost = ""
+    @State private var electricityCost = "0"
     
     var body: some View {
         NavigationView {
@@ -19,6 +19,10 @@ struct Setup: View {
                 HStack {
                     TextField("Electricity Cost", text: $electricityCost)
                         .keyboardType(.decimalPad)
+                        .onChange(of: electricityCost) { newValue in
+                            nc.userData.electricityRate = Double(electricityCost)!
+                            print(nc.userData.electricityRate)
+                        }
                     
                     Text("$/kWh")
                 }.textFieldStyle()
