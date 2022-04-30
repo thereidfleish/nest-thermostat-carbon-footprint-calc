@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct BarView: View {
-    var datum: Double
+    var datum: CoolingDataEvent
     //var colors: [Color]
     var color: Color
     
@@ -19,7 +19,7 @@ struct BarView: View {
     var body: some View {
         Rectangle()
             .fill(color)
-            .opacity(datum == 0.0 ? 0.0 : 1.0)
+            .opacity(datum.totalkWhUsed == 0.0 ? 0.0 : 1.0)
     }
 }
 

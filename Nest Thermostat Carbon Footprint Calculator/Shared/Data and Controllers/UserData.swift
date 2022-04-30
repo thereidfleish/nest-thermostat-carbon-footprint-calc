@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import AVFoundation
+import SwiftUI
 
 struct UserData {
     // Shared data
@@ -121,10 +122,39 @@ struct Cooling {
 }
 
 // This represents one specific cooling event (e.g, one instance the A/C was on and how much energy it used)
-struct CoolingDataEvent {
-    var startTime: Date // the time the event started
-    var endTime: Date // the time the event ended
+struct CoolingDataEvent: Comparable {
+    // These two static functions help the struct conform to the Comparable protocol
+    static func < (lhs: CoolingDataEvent, rhs: CoolingDataEvent) -> Bool {
+        lhs.totalkWhUsed < rhs.totalkWhUsed
+    }
+    static func == (lhs: CoolingDataEvent, rhs: CoolingDataEvent) -> Bool {
+        lhs.totalkWhUsed == rhs.totalkWhUsed
+    }
+    
+    @EnvironmentObject private var nc: NetworkController
+    var startTime: Date // the time this event started
+    var endTime: Date // the time this event ended
+    var totalTime: Double { // the total duration of this event
+        return endTime.timeIntervalSinceReferenceDate - startTime.timeIntervalSinceReferenceDate
+    }
+    var fankWhUsed: Double {
+        return (nc.userData.cooling.fanWattage ?? 0) * totalTime
+    }
+    var compressorkWhUsed: Double {
+        return (nc.userData.cooling.compressorWattage ?? 0) * totalTime
+    }
+    var totalkWhUsed: Double {
+        return fankWhUsed + compressorkWhUsed
+    }
 }
+
+//// This represents all of the cooling data events, and is a computed property
+//struct CoolingData {
+//    var coolingData: [CoolingDataEvent]
+//    var coolingEvents: [CoolingDataEvent] {
+//
+//    }
+//}
 
 enum HeatingType {
     case unknown

@@ -18,7 +18,7 @@ struct Home: View {
             Text("Home CO2 Emissions")
                 .largeTitleStyle()
             
-            //BarChartView(data: <#T##[Double]#>, color: <#T##Color#>)
+            BarChartView(data: nc.userData.cooling.events, color: .blue)
         }
         
     }
