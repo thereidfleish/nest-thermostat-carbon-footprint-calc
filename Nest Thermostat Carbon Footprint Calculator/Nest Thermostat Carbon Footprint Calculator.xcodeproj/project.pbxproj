@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		25515C3F281C813200EAD0D1 /* BarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25515C3E281C813200EAD0D1 /* BarView.swift */; };
+		25515C40281C813200EAD0D1 /* BarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25515C3E281C813200EAD0D1 /* BarView.swift */; };
+		25515C43281C817E00EAD0D1 /* BarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25515C42281C817E00EAD0D1 /* BarChartView.swift */; };
+		25515C44281C817E00EAD0D1 /* BarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25515C42281C817E00EAD0D1 /* BarChartView.swift */; };
 		257F93ED281B7D2100EA90DF /* CoolingSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257F93EC281B7D2100EA90DF /* CoolingSetup.swift */; };
 		257F93EE281B7D2100EA90DF /* CoolingSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257F93EC281B7D2100EA90DF /* CoolingSetup.swift */; };
 		25BD094B281B29F600F4ABF6 /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 25BD094A281B29F600F4ABF6 /* credentials.plist */; };
@@ -53,6 +57,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		25515C3E281C813200EAD0D1 /* BarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarView.swift; sourceTree = "<group>"; };
+		25515C42281C817E00EAD0D1 /* BarChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartView.swift; sourceTree = "<group>"; };
 		257F93EC281B7D2100EA90DF /* CoolingSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoolingSetup.swift; sourceTree = "<group>"; };
 		25BD094A281B29F600F4ABF6 /* credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = credentials.plist; sourceTree = "<group>"; };
 		25BD094C281B2B6E00F4ABF6 /* UserData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
@@ -125,6 +131,52 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		25515C3A281C80C900EAD0D1 /* Setup Views */ = {
+			isa = PBXGroup;
+			children = (
+				25CB6C0B281B274F00E5902D /* LogInView.swift */,
+				25BD0952281B410400F4ABF6 /* Setup.swift */,
+				257F93EC281B7D2100EA90DF /* CoolingSetup.swift */,
+			);
+			path = "Setup Views";
+			sourceTree = "<group>";
+		};
+		25515C3B281C80EB00EAD0D1 /* Data and Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				25CB6C0C281B274F00E5902D /* NetworkController.swift */,
+				25BD094C281B2B6E00F4ABF6 /* UserData.swift */,
+			);
+			path = "Data and Controllers";
+			sourceTree = "<group>";
+		};
+		25515C3C281C80F800EAD0D1 /* Initial Views */ = {
+			isa = PBXGroup;
+			children = (
+				25BE9D2C27EE68A9004F6453 /* Nest_Thermostat_Carbon_Footprint_CalculatorApp.swift */,
+				25BE9D2D27EE68A9004F6453 /* ContentView.swift */,
+			);
+			path = "Initial Views";
+			sourceTree = "<group>";
+		};
+		25515C3D281C810600EAD0D1 /* Home Views */ = {
+			isa = PBXGroup;
+			children = (
+				25BD094F281B3BB800F4ABF6 /* Home.swift */,
+				25515C41281C816D00EAD0D1 /* Bar Chart Views */,
+			);
+			path = "Home Views";
+			sourceTree = "<group>";
+		};
+		25515C41281C816D00EAD0D1 /* Bar Chart Views */ = {
+			isa = PBXGroup;
+			children = (
+				25515C3E281C813200EAD0D1 /* BarView.swift */,
+				25515C42281C817E00EAD0D1 /* BarChartView.swift */,
+			);
+			path = "Bar Chart Views";
+			sourceTree = "<group>";
+		};
 		25BE9D2627EE68A9004F6453 = {
 			isa = PBXGroup;
 			children = (
@@ -143,14 +195,10 @@
 		25BE9D2B27EE68A9004F6453 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				25BE9D2C27EE68A9004F6453 /* Nest_Thermostat_Carbon_Footprint_CalculatorApp.swift */,
-				25BE9D2D27EE68A9004F6453 /* ContentView.swift */,
-				25BD094F281B3BB800F4ABF6 /* Home.swift */,
-				25BD0952281B410400F4ABF6 /* Setup.swift */,
-				257F93EC281B7D2100EA90DF /* CoolingSetup.swift */,
-				25CB6C0B281B274F00E5902D /* LogInView.swift */,
-				25CB6C0C281B274F00E5902D /* NetworkController.swift */,
-				25BD094C281B2B6E00F4ABF6 /* UserData.swift */,
+				25515C3C281C80F800EAD0D1 /* Initial Views */,
+				25515C3A281C80C900EAD0D1 /* Setup Views */,
+				25515C3D281C810600EAD0D1 /* Home Views */,
+				25515C3B281C80EB00EAD0D1 /* Data and Controllers */,
 				25BD0955281B44EB00F4ABF6 /* Styles.swift */,
 				25BE9D2E27EE68AC004F6453 /* Assets.xcassets */,
 			);
@@ -435,11 +483,13 @@
 				25CB6C0D281B274F00E5902D /* LogInView.swift in Sources */,
 				25BE9D5627EE68AC004F6453 /* ContentView.swift in Sources */,
 				25BD0956281B44EB00F4ABF6 /* Styles.swift in Sources */,
+				25515C3F281C813200EAD0D1 /* BarView.swift in Sources */,
 				25BD094D281B2B6F00F4ABF6 /* UserData.swift in Sources */,
 				25BD0950281B3BB800F4ABF6 /* Home.swift in Sources */,
 				257F93ED281B7D2100EA90DF /* CoolingSetup.swift in Sources */,
 				25BD0953281B410500F4ABF6 /* Setup.swift in Sources */,
 				25BE9D5427EE68AC004F6453 /* Nest_Thermostat_Carbon_Footprint_CalculatorApp.swift in Sources */,
+				25515C43281C817E00EAD0D1 /* BarChartView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,12 +497,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25515C40281C813200EAD0D1 /* BarView.swift in Sources */,
 				25CB6C10281B274F00E5902D /* NetworkController.swift in Sources */,
 				257F93EE281B7D2100EA90DF /* CoolingSetup.swift in Sources */,
 				25BD0957281B44EB00F4ABF6 /* Styles.swift in Sources */,
 				25BD0954281B410500F4ABF6 /* Setup.swift in Sources */,
 				25CB6C0E281B274F00E5902D /* LogInView.swift in Sources */,
 				25BD0951281B3BB800F4ABF6 /* Home.swift in Sources */,
+				25515C44281C817E00EAD0D1 /* BarChartView.swift in Sources */,
 				25BE9D5727EE68AC004F6453 /* ContentView.swift in Sources */,
 				25BE9D5527EE68AC004F6453 /* Nest_Thermostat_Carbon_Footprint_CalculatorApp.swift in Sources */,
 			);

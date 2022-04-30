@@ -56,7 +56,7 @@ struct navigationLink: ViewModifier {
 }
 
 /* Used just for bucket name when editing property internally */
-struct bucketName: ViewModifier {
+struct largeTitle: ViewModifier {
     let font = Font.system(.title2).weight(.heavy)
     func body(content: Content) -> some View {
         content
@@ -156,8 +156,8 @@ extension View {
     func navigationLinkStyle() -> some View {
         modifier(navigationLink())
     }
-    func bucketNameStyle() -> some View {
-        modifier(bucketName())
+    func largeTitleStyle() -> some View {
+        modifier(largeTitle())
     }
     func bucketTextExternalStyle() -> some View {
         modifier(bucketTextExternal())

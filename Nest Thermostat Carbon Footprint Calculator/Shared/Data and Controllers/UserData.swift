@@ -66,6 +66,38 @@ struct UserData {
     }
 }
 
+struct GenerateRandomDates {
+    // tuple of startDate, endDate
+//    var dates: ([Date], [Date]) {
+//        var dates: ([Date], [Date]) = ([], [])
+//        let months = [("04", 28), ("05", 29), ("06", 28), ("07", 29), ("08", 29), ("09", 28), ("10", 29), ("11", 28), ("12", 29), ("01", 29), ("02", 26), ("03", 29)]
+//        //let days = [30, 31, 30, 31, 31, 30, 31, 30, 31, 31, 28, 31]
+//
+//        for (month, days) in months {
+//            for day in 1...days {
+//                dates.0.append(Date.randomBetween(start: Date.parse("\(Int(month)! < 4 ? "2022" : "2021")-\(month)-\(String(day))"), end: Date.parse("\(Int(month)! < 4 ? "2022" : "2021")-\(month)-\(String(day+1))")))
+//                dates.1.append(Date.randomBetween(start: Date.parse("\(Int(month)! < 4 ? "2022" : "2021")-\(month)-\(String(day+1))"), end: Date.parse("\(Int(month)! < 4 ? "2022" : "2021")-\(month)-\(String(day+2))")))
+//            }
+//        }
+//
+//        return dates
+//    }
+    
+    var coolingDates: [CoolingDataEvent] {
+        var dates: [CoolingDataEvent] = []
+        let months = [("04", 28), ("05", 29), ("06", 28), ("07", 29), ("08", 29), ("09", 28), ("10", 29), ("11", 28), ("12", 29), ("01", 29), ("02", 26), ("03", 29)]
+        //let days = [30, 31, 30, 31, 31, 30, 31, 30, 31, 31, 28, 31]
+        
+        for (month, days) in months {
+            for day in 1...days {
+                dates.append(CoolingDataEvent(startTime: Date.randomBetween(start: Date.parse("\(Int(month)! < 4 ? "2022" : "2021")-\(month)-\(String(day))"), end: Date.parse("\(Int(month)! < 4 ? "2022" : "2021")-\(month)-\(String(day+1))")), endTime: Date.randomBetween(start: Date.parse("\(Int(month)! < 4 ? "2022" : "2021")-\(month)-\(String(day+1))"), end: Date.parse("\(Int(month)! < 4 ? "2022" : "2021")-\(month)-\(String(day+2))"))))
+            }
+        }
+        
+        return dates
+    }
+}
+
 struct SharedData: Codable, Identifiable {
     var id: Int
     var username: String
@@ -85,6 +117,13 @@ struct Cooling {
     var type: CoolingType
     var fanWattage: Double?
     var compressorWattage: Double?
+    var events: [CoolingDataEvent]
+}
+
+// This represents one specific cooling event (e.g, one instance the A/C was on and how much energy it used)
+struct CoolingDataEvent {
+    var startTime: Date // the time the event started
+    var endTime: Date // the time the event ended
 }
 
 enum HeatingType {
