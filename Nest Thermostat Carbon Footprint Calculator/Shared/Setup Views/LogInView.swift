@@ -53,7 +53,7 @@ struct LogInView: View {
                 if (awaiting) {
                     ProgressView().padding()
                 } else if (showingError) {
-                    Text(UserData.computeErrorMessage(errorMessage: errorMessage)).padding()
+                    Text(Helpers.computeErrorMessage(errorMessage: errorMessage)).padding()
                 } else {
                     
                     Button(action: {
@@ -158,52 +158,52 @@ struct LogInView: View {
         }
     }
     
-    func tokenSignIn(idToken: String) {
-        let json: [String: Any] = ["token": idToken]
-        print(idToken)
-        
-        //        guard let authData = try? JSONEncoder().encode(["token": idToken, "type": 0]) else {
-        //            return
-        //        }
-        guard let authData = try? JSONSerialization.data(withJSONObject: json) else {
-            return
-        }
-        let url = URL(string: "\(host)/login/")!
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        
-        let task = URLSession.shared.uploadTask(with: request, from: authData) { data, response, error in
-            print(response.debugDescription)
-            
-            print(data!.prettyPrintedJSONString)
-            print("NO \(error.debugDescription)")
-            
-            
-            guard let data = data else {
-                print("URLSession dataTask error:", error ?? "nil")
-                return
-            }
-            
-            let decoder = JSONDecoder()
-            decoder.dateDecodingStrategy = .iso8601
-            do {
-                let decodedResponse = try decoder.decode(SharedData.self, from: data)
-                nc.userData.shared = decodedResponse
-                nc.userData.loggedIn = true
-                
-                // Handle the new user
-                if (response.debugDescription.contains("Status Code: 201")) {
-                    nc.newUser = true
-                }
-                
-            } catch {
-                print("Error")
-                awaiting = false
-            }
-        }
-        task.resume()
-    }
+//    func tokenSignIn(idToken: String) {
+//        let json: [String: Any] = ["token": idToken]
+//        print(idToken)
+//
+//        //        guard let authData = try? JSONEncoder().encode(["token": idToken, "type": 0]) else {
+//        //            return
+//        //        }
+//        guard let authData = try? JSONSerialization.data(withJSONObject: json) else {
+//            return
+//        }
+//        let url = URL(string: "\(host)/login/")!
+//        var request = URLRequest(url: url)
+//        request.httpMethod = "POST"
+//        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+//
+//        let task = URLSession.shared.uploadTask(with: request, from: authData) { data, response, error in
+//            print(response.debugDescription)
+//
+//            print(data!.prettyPrintedJSONString)
+//            print("NO \(error.debugDescription)")
+//
+//
+//            guard let data = data else {
+//                print("URLSession dataTask error:", error ?? "nil")
+//                return
+//            }
+//
+//            let decoder = JSONDecoder()
+//            decoder.dateDecodingStrategy = .iso8601
+//            do {
+//                let decodedResponse = try decoder.decode(SharedData.self, from: data)
+//                nc.userData.shared = decodedResponse
+//                nc.userData.loggedIn = true
+//
+//                // Handle the new user
+//                if (response.debugDescription.contains("Status Code: 201")) {
+//                    nc.newUser = true
+//                }
+//
+//            } catch {
+//                print("Error")
+//                awaiting = false
+//            }
+//        }
+//        task.resume()
+//    }
     
     func checkPreviousSignIn() {
         GIDSignIn.sharedInstance.restorePreviousSignIn { user, error in

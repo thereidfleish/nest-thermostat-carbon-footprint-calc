@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2532C6B2281E2D3B00838698 /* HeatingSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2532C6B1281E2D3B00838698 /* HeatingSetup.swift */; };
+		2532C6B3281E2D3B00838698 /* HeatingSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2532C6B1281E2D3B00838698 /* HeatingSetup.swift */; };
 		25515C3F281C813200EAD0D1 /* BarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25515C3E281C813200EAD0D1 /* BarView.swift */; };
 		25515C40281C813200EAD0D1 /* BarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25515C3E281C813200EAD0D1 /* BarView.swift */; };
 		25515C43281C817E00EAD0D1 /* BarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25515C42281C817E00EAD0D1 /* BarChartView.swift */; };
@@ -57,6 +59,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2532C6B1281E2D3B00838698 /* HeatingSetup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeatingSetup.swift; sourceTree = "<group>"; };
 		25515C3E281C813200EAD0D1 /* BarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarView.swift; sourceTree = "<group>"; };
 		25515C42281C817E00EAD0D1 /* BarChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartView.swift; sourceTree = "<group>"; };
 		257F93EC281B7D2100EA90DF /* CoolingSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoolingSetup.swift; sourceTree = "<group>"; };
@@ -137,6 +140,7 @@
 				25CB6C0B281B274F00E5902D /* LogInView.swift */,
 				25BD0952281B410400F4ABF6 /* Setup.swift */,
 				257F93EC281B7D2100EA90DF /* CoolingSetup.swift */,
+				2532C6B1281E2D3B00838698 /* HeatingSetup.swift */,
 			);
 			path = "Setup Views";
 			sourceTree = "<group>";
@@ -489,6 +493,7 @@
 				257F93ED281B7D2100EA90DF /* CoolingSetup.swift in Sources */,
 				25BD0953281B410500F4ABF6 /* Setup.swift in Sources */,
 				25BE9D5427EE68AC004F6453 /* Nest_Thermostat_Carbon_Footprint_CalculatorApp.swift in Sources */,
+				2532C6B2281E2D3B00838698 /* HeatingSetup.swift in Sources */,
 				25515C43281C817E00EAD0D1 /* BarChartView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -502,6 +507,7 @@
 				257F93EE281B7D2100EA90DF /* CoolingSetup.swift in Sources */,
 				25BD0957281B44EB00F4ABF6 /* Styles.swift in Sources */,
 				25BD0954281B410500F4ABF6 /* Setup.swift in Sources */,
+				2532C6B3281E2D3B00838698 /* HeatingSetup.swift in Sources */,
 				25CB6C0E281B274F00E5902D /* LogInView.swift in Sources */,
 				25BD0951281B3BB800F4ABF6 /* Home.swift in Sources */,
 				25515C44281C817E00EAD0D1 /* BarChartView.swift in Sources */,

@@ -6,10 +6,11 @@
 //
 
 import Foundation
+import SwiftUI
 //import Alamofire
 
 class NetworkController: ObservableObject {
-    @Published var userData: UserData = UserData(shared: SharedData(id: -1, username: "", display_name: "Reid"), electricityRate: 0, cooling: Cooling(type: .unknown, fanWattage: 0, compressorWattage: 0, events: GenerateRandomDates().coolingDates), heating: Heating(type: .unknown, oilGPH: 0, gasUnitsPH: 0, otherElectricalWattage: 0))
+    @Published var userData: UserData = UserData()
     @Published var awaiting = false
     @Published var uploadURL: URL = URL(fileURLWithPath: "")
     @Published var uploadURLSaved: Bool = false
