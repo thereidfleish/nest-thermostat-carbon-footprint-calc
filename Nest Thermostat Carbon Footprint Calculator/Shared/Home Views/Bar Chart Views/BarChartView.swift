@@ -282,7 +282,7 @@ struct BarChartView: View {
 //                        let height = geometry.size.height * finalRangeData[index].totalkWhUsed / highestData.totalkWhUsed
                         
                         VStack {
-                            HStack(alignment: .bottom) {
+                            HStack(alignment: .bottom/*, spacing: -2.0*/) {
                                 VStack {
                                     Text(String((round(calculateLabel(datum: finalRangeData[index]).0*10)/10.0)))
                                         .font(.footnote)
