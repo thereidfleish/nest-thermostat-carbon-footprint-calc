@@ -13,16 +13,16 @@ import SwiftUI
 
 struct HeatingSetup: View {
     @EnvironmentObject private var nc: NetworkController
-    @State private var oilPrice = ""
-    @State private var oilGPHInput = ""
-    @State private var otherAmps = ""
-    @State private var otherVolts = ""
+    @State private var oilPrice: String
+    @State private var oilGPHInput: String
+    @State private var otherAmps: String
+    @State private var otherVolts: String
     
     init() {
         // Load any existing home configuration from the User Defaults and extract the params
         let homeConfig = Helpers.loadHomeConfig()
         
-        oilGPHInput = homeConfig.heating.oilPrice == 0 ? "" : String(homeConfig.heating.oilPrice)
+        oilPrice = homeConfig.heating.oilPrice == 0 ? "" : String(homeConfig.heating.oilPrice)
         
         oilGPHInput = homeConfig.heating.oilGPH == 0 ? "" : String(homeConfig.heating.oilGPH)
         print("sarah")

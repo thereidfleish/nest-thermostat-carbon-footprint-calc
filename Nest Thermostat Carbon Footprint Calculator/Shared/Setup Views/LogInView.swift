@@ -39,7 +39,7 @@ struct LogInView: View {
         ZStack {
             GoogleAuthRepresentable()
             VStack {
-                Text("AI Tennis Coach")
+                Text("Smart Thermostat Carbon Footprint Calculator")
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .foregroundColor(Color.green)

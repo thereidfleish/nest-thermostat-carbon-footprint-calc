@@ -9,7 +9,7 @@ import SwiftUI
 
 struct BarView: View {
     //var datum: CoolingDataEvent
-    var datum: RangeElementTotal
+    var datum: Double
     //var colors: [Color]
     var color: Color
     
@@ -20,7 +20,7 @@ struct BarView: View {
     var body: some View {
         RoundedRectangle(cornerRadius: 5)
             .fill(color)
-            .opacity(datum.totalkWhUsed == 0.0 ? 0.0 : 1.0)
+            .opacity(datum == 0.0 ? 0.0 : 1.0)
     }
 }
 

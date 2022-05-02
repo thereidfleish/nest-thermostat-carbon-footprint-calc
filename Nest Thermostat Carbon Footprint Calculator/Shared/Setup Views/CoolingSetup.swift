@@ -122,8 +122,8 @@ struct CoolingSetup: View {
     }
 }
 
-struct CoolingSetup_Previews: PreviewProvider {
-    static var previews: some View {
-        CoolingSetup()
-    }
-}
+//struct CoolingSetup_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CoolingSetup()
+//    }
+//}

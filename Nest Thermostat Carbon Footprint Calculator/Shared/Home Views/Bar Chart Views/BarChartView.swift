@@ -8,28 +8,8 @@
 import SwiftUI
 
 struct BarChartView: View {
-    func mod(_ a: Int, _ n: Int) -> Int {
-        precondition(n > 0, "modulus must be positive")
-        let r = a % n
-        return r >= 0 ? r : r + n
-    }
-    
-    func generateMods(currentMonth: Int) -> [Int] {
-        var mods: [Int] = []
-        for i in [11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0] {
-            if (currentMonth - i == 0) {
-                mods.append(12)
-            } else {
-                mods.append(mod(currentMonth-i, 12))
-            }
-        }
-        return mods
-    }
-    
     var coolingData: [CoolingDataEvent]
     var heatingData: [HeatingDataEvent]
-    //var colors: [Color]
-    var color: Color
     var range: RangeType
     var emissionsType: EmissionsType
     
@@ -65,8 +45,7 @@ struct BarChartView: View {
     
     var rangeLabel: [String] = []
     
-    init(coolingData: [CoolingDataEvent], heatingData: [HeatingDataEvent], range: RangeType, emissionsType: EmissionsType, color: Color) {
-        self.color = color
+    init(coolingData: [CoolingDataEvent], heatingData: [HeatingDataEvent], range: RangeType, emissionsType: EmissionsType) {
         self.range = range
         self.emissionsType = emissionsType
         self.coolingData = coolingData
@@ -155,12 +134,119 @@ struct BarChartView: View {
         highestData = max
     }
     
-    //    var highestData: MonthlyTotal {
-    //        let max = annualData.max() ?? MonthlyTotal() // the .max() function returns the CoolingDataEvent with the largest kWh usage, or nil if there are no events
-    //        if max.totalkWhUsed == 0 { return MonthlyTotal() } // should return a 0 kWh CoolingDataEvent if there are no elements
-    //        print("returning max")
-    //        return max
-    //    }
+    func calculateLabel(datum: RangeElementTotal) -> (Double, Double) {
+        switch emissionsType {
+        case .duration:
+            return (datum.totalCoolingDuration, datum.totalHeatingDuration)
+        case .fanKwh:
+            return (datum.fankWhUsed, 0)
+        case .compressorKwh:
+            return (datum.compressorkWhUsed, 0)
+        case .totalkWh:
+            return (datum.totalkWhUsed, datum.otherElectricalkWhUsed)
+        case .totalMoney:
+            return (datum.totalCoolingCost, datum.totalHeatingCost)
+        case .oilGallons:
+            return (0, datum.totaloilGallonsUsed)
+        case .co2_e:
+            return (datum.totalCoolingEmissions, datum.totalHeatingEmissions)
+        }
+    }
+    
+    // return (coolingHeight, heatingHeight)
+    func calculateHeight(geometryHeight: CGFloat, datum: RangeElementTotal) -> (Double, Double) {
+        switch emissionsType {
+        case .duration:
+            var coolingMax = finalRangeData[0].totalCoolingDuration
+            for datum in finalRangeData {
+                if datum.totalCoolingDuration > coolingMax {
+                    coolingMax = datum.totalCoolingDuration
+                }
+            }
+            var heatingMax = finalRangeData[0].totalHeatingDuration
+            for datum in finalRangeData {
+                if datum.totalHeatingDuration > heatingMax {
+                    heatingMax = datum.totalHeatingDuration
+                }
+            }
+            let globalMax = max(coolingMax, heatingMax)
+            
+            return (geometryHeight * datum.totalCoolingDuration / globalMax, geometryHeight * datum.totalHeatingDuration / globalMax)
+        case .fanKwh:
+            var coolingMax = finalRangeData[0].fankWhUsed
+            for datum in finalRangeData {
+                if datum.fankWhUsed > coolingMax {
+                    coolingMax = datum.fankWhUsed
+                }
+            }
+            return (geometryHeight * datum.fankWhUsed / coolingMax, 0)
+        case .compressorKwh:
+            var coolingMax = finalRangeData[0].compressorkWhUsed
+            for datum in finalRangeData {
+                if datum.compressorkWhUsed > coolingMax {
+                    coolingMax = datum.compressorkWhUsed
+                }
+            }
+            return (geometryHeight * datum.compressorkWhUsed / coolingMax, 0)
+        case .totalkWh:
+            var coolingMax = finalRangeData[0].totalkWhUsed
+            for datum in finalRangeData {
+                if datum.totalkWhUsed > coolingMax {
+                    coolingMax = datum.totalkWhUsed
+                }
+            }
+            var heatingMax = finalRangeData[0].otherElectricalkWhUsed
+            for datum in finalRangeData {
+                if datum.otherElectricalkWhUsed > heatingMax {
+                    heatingMax = datum.otherElectricalkWhUsed
+                }
+            }
+            let globalMax = max(coolingMax, heatingMax)
+            
+            return (geometryHeight * datum.totalkWhUsed / globalMax, geometryHeight * datum.otherElectricalkWhUsed / globalMax)
+        case .totalMoney:
+            var coolingMax = finalRangeData[0].totalCoolingCost
+            for datum in finalRangeData {
+                if datum.totalCoolingCost > coolingMax {
+                    coolingMax = datum.totalCoolingCost
+                }
+            }
+            var heatingMax = finalRangeData[0].totalHeatingCost
+            for datum in finalRangeData {
+                if datum.totalHeatingCost > heatingMax {
+                    heatingMax = datum.totalHeatingCost
+                }
+            }
+            let globalMax = max(coolingMax, heatingMax)
+            
+            return (geometryHeight * datum.totalCoolingCost / globalMax, geometryHeight * datum.totalHeatingCost / globalMax)
+        case .oilGallons:
+            var heatingMax = finalRangeData[0].totaloilGallonsUsed
+            for datum in finalRangeData {
+                if datum.totaloilGallonsUsed > heatingMax {
+                    heatingMax = datum.totaloilGallonsUsed
+                }
+            }
+            
+            return (0, geometryHeight * datum.totaloilGallonsUsed / heatingMax)
+        case .co2_e:
+            var coolingMax = finalRangeData[0].totalCoolingEmissions
+            for datum in finalRangeData {
+                if datum.totalCoolingEmissions > coolingMax {
+                    coolingMax = datum.totalCoolingEmissions
+                }
+            }
+            var heatingMax = finalRangeData[0].totalHeatingEmissions
+            for datum in finalRangeData {
+                if datum.totalHeatingEmissions > heatingMax {
+                    heatingMax = datum.totalHeatingEmissions
+                }
+            }
+            let globalMax = max(coolingMax, heatingMax)
+            
+            return (geometryHeight * datum.totalCoolingEmissions / globalMax, geometryHeight * datum.totalHeatingEmissions / globalMax)
+        }
+    }
     
     var body: some View {
 //        GeometryReader { geometry in
@@ -187,63 +273,29 @@ struct BarChartView: View {
                     ForEach(finalRangeData.indices, id: \.self) { index in
                         let width = (geometry.size.width / CGFloat(finalRangeData.count)) - 4.0
                         
-                        var coolingHeight: Double = 0
-                        var heatingHeight: Double = 0
-
-//                        switch emissionsType {
-//                        case .duration:
-//                            coolingHeight = geometry.size.height * finalRangeData[index].totalCoolingDuration / highestData.totalCoolingDuration
-//                            heatingHeight = geometry.size.height * finalRangeData[index].totalCoolingDuration / highestData.totalCoolingDuration
-//                        case .fanKwh:
-//                            coolingHeight = geometry.size.height * finalRangeData[index].fankWhUsed / highestData.fankWhUsed
-//                            heatingHeight = 0
-//                        case .compressorKwh:
-//                            coolingHeight = geometry.size.height * finalRangeData[index].compressorKwh / highestData.compressorKwh
-//                            heatingHeight = 0
-//                        case .totalkWh:
-//                            coolingHeight = geometry.size.height * finalRangeData[index].totalkWhUsed / highestData.totalkWhUsed
-//                            heatingHeight = geometry.size.height * finalRangeData[index].otherElectricalkWhUsed / highestData.otherElectricalkWhUsed
-//                        case .totalMoney:
-//                            coolingHeight = geometry.size.height * finalRangeData[index].totalCoolingCost / highestData.totalCoolingCost
-//                            heatingHeight = geometry.size.height * finalRangeData[index].totalHeatingCost / highestData.totalHeatingCost
-//                        case .oilGallons:
-//                            coolingHeight = 0
-//                            heatingHeight = geometry.size.height * finalRangeData[index].totaloilGallonsUsed / highestData.totaloilGallonsUsed
-//                        case .co2_e:
-//                            coolingHeight = geometry.size.height * finalRangeData[index].totalCoolingEmissions / highestData.totalCoolingEmissions
-//                            heatingHeight = geometry.size.height * finalRangeData[index].totalHeatingEmissions / highestData.totalHeatingEmissions
-//                        }
-
-
-
-                            
-
-
-                        
-                        
+                        let coolingHeight: Double = calculateHeight(geometryHeight: geometry.size.height, datum: finalRangeData[index]).0
+                        let heatingHeight: Double = calculateHeight(geometryHeight: geometry.size.height, datum: finalRangeData[index]).1
                         
 //                        let coolingHeight = geometry.size.height * finalRangeData[index].totalCoolingEmissions / highestData.totalHeatingEmissions
 //                        let heatingHeight = geometry.size.height * finalRangeData[index].totalHeatingEmissions / highestData.totalHeatingEmissions
                         
-                        let height = geometry.size.height * finalRangeData[index].totalkWhUsed / highestData.totalkWhUsed
+//                        let height = geometry.size.height * finalRangeData[index].totalkWhUsed / highestData.totalkWhUsed
                         
                         VStack {
-                            
-                            
                             HStack(alignment: .bottom) {
                                 VStack {
-                                    Text(String((round(finalRangeData[index].totalCoolingEmissions*10)/10.0)))
+                                    Text(String((round(calculateLabel(datum: finalRangeData[index]).0*10)/10.0)))
                                         .font(.footnote)
                                     
-                                    BarView(datum: finalRangeData[index], color: .blue)
+                                    BarView(datum: calculateLabel(datum: finalRangeData[index]).0, color: .blue)
                                         .frame(width: width, height: coolingHeight, alignment: .bottom)
                                 }
                                 
                                 VStack {
-                                    Text(String((round(finalRangeData[index].totalHeatingEmissions*10)/10.0)))
+                                    Text(String((round(calculateLabel(datum: finalRangeData[index]).1*10)/10.0)))
                                         .font(.footnote)
                                     
-                                    BarView(datum: finalRangeData[index], color: .red)
+                                    BarView(datum: calculateLabel(datum: finalRangeData[index]).1, color: .red)
                                         .frame(width: width, height: heatingHeight, alignment: .bottom)
                                 }
                             }

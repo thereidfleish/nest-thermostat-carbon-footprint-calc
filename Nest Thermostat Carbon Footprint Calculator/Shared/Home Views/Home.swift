@@ -57,7 +57,7 @@ struct Home: View {
                     .largeTitleStyle()
                 
                 HStack {
-                    Text(graphRangeText + " emissions (CO2-e)")
+                    Text(graphRangeText + " " + graphEmissionsText)
                         .largeTitleStyle()
                     
                     Menu {
@@ -137,7 +137,7 @@ struct Home: View {
 
                 }
                 
-                BarChartView(coolingData: GenerateRandomDates().coolingDates, heatingData: GenerateRandomDates().heatingDates, range: range, emissionsType: emissionsType, color: .blue)
+                BarChartView(coolingData: GenerateRandomDates().coolingDates, heatingData: GenerateRandomDates().heatingDates, range: range, emissionsType: emissionsType)
                     .frame(height: 300)
                 
 //                Text("Today's Stats")
